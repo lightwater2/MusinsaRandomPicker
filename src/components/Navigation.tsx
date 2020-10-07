@@ -23,8 +23,8 @@ export default () => {
         spacing={1}
       >
         <Grid item xs={8} sm={9}/>
-        <Grid item><img src={instagramLogo} width="32" height="32"/></Grid>
-        <Grid item><img src={githubLogo}/></Grid>
+        <Grid item><a href='https://www.instagram.com/y0knono/' target="_blank" rel='noreferrer'><img src={instagramLogo} width="32" height="32"/></a></Grid>
+        <Grid item><a href="https://github.com/lightwater2/MusinsaRandomPicker" target="_blank" rel='noreferrer'><img src={githubLogo}/></a></Grid>
         <Grid item xs={2} sm={1}container justify="flex-end">
           <StyledButton 
             aria-controls="menu" 
@@ -43,7 +43,7 @@ export default () => {
       open={Boolean(anchorEl)}
       onClose={handleClose}
       >
-        <MenuItem onClick={handleClose} component="a" href="/">MusinsaRandomPicker</MenuItem>
+        <MenuItem onClick={handleClose} component="a" href="/" target="_blank" rel='noreferrer'>MusinsaRandomPicker</MenuItem>
       </Menu>
     </StyledNavigation>
   );

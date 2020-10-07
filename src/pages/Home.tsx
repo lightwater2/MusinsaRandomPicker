@@ -1,27 +1,39 @@
 import * as React from 'react';
+import { randomInt } from 'mathjs';
+import { Redirect } from 'react-router';
+import { isBrowser } from 'react-device-detect';
 import { Grid, Typography, Button } from '@material-ui/core';
 import styled from 'styled-components';
 import 'fontsource-roboto';
+
+import {Adsense} from '@ctrl/react-adsense';
+
 export default () => {
   const url = 'https://store.musinsa.com/app/product/detail/';
-  const productNumber = getRandomInt(0,1636658);
-  return(
-  <Grid
-    container
-    direction="column"
-    justify="center"
-    alignItems="center"
-  >
-    <StyledTypography align='center' variant="h3" gutterBottom>MUSINSA<br />Random Picker</StyledTypography>
-    <Button variant="contained" color="secondary" component="a" href={url+productNumber}>Random Pick!</Button>
-  </Grid>
-
+  const Dice = () => {
+    const productNumber = randomInt(0,1630000);
+    window.open(url+productNumber,'_blank','noreferrer');
+  }
+  return (
+    <Grid
+      container
+      direction="column"
+      justify="center"
+      alignItems="center"
+    >
+      <StyledTypography align='center' variant="h3" gutterBottom>MUSINSA<br />Random Picker</StyledTypography>
+      <Button onClick={Dice} variant="contained" color="secondary">
+        Random Pick!
+      </Button>
+      <Adsense 
+        client="ca-pub-9827250308558693"
+        slot="7216266619" 
+        style={{ display:'bloack'}}
+        format="auto"
+        full-width-responsive="true"
+      />
+    </Grid>
   )
-}
-function getRandomInt(min:number, max:number) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
 }
 const StyledTypography = styled(Typography)`
   padding-top:18vh;
