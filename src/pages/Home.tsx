@@ -6,14 +6,13 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import styled from 'styled-components';
 import 'fontsource-roboto';
 
-import {Adsense} from '@ctrl/react-adsense';
-
+import axios from 'axios';
 export default () => {
   const url = 'https://store.musinsa.com/app/product/detail/';
   const Dice = () => {
     const productNumber = randomInt(0,1630000);
     window.open(url+productNumber,'_blank','noreferrer');
-  }
+  };
   return (
     <Grid
       container
@@ -25,16 +24,9 @@ export default () => {
       <Button onClick={Dice} variant="contained" color="secondary">
         Random Pick!
       </Button>
-      <Adsense 
-        client="ca-pub-9827250308558693"
-        slot="7216266619" 
-        style={{ display:'bloack'}}
-        format="auto"
-        full-width-responsive="true"
-      />
     </Grid>
   )
 }
 const StyledTypography = styled(Typography)`
-  padding-top:18vh;
+  padding-top:22vh;
 `;
